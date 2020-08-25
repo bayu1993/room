@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UangMasukDao::class], version = 1)
+@Database(entities = [UangMasuk::class], version = 1)
 abstract class NutaDB : RoomDatabase() {
     abstract fun uangMasukDao(): UangMasukDao
 
