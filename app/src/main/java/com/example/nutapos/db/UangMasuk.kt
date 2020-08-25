@@ -13,3 +13,11 @@ data class UangMasuk(
     @ColumnInfo(name = "no") val no: Int,
     @ColumnInfo(name = "tgl") val tgl: String
 )
+
+@Entity(tableName = "tbl_rekening")
+data class Rekening(
+@PrimaryKey(autoGenerate = true) val rekeningId: Long?,
+@ColumnInfo(name = "bankName") val bankName:String,
+@ColumnInfo(name = "norek") val norek:String,
+@ColumnInfo(name = "name") val name:String
+)

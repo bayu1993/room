@@ -5,4 +5,5 @@ import com.example.nutapos.db.UangMasuk
 
 interface View : BaseView{
     fun onInsertSuccess()
+    fun onInsertRekeningSuccess()
 }
