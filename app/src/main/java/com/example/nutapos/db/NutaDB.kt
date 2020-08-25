@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [UangMasuk::class], version = 1)
+
+@Database(entities = [UangMasuk::class], version = 2, exportSchema = true)
 abstract class NutaDB : RoomDatabase() {
     abstract fun uangMasukDao(): UangMasukDao
 
@@ -21,7 +24,8 @@ abstract class NutaDB : RoomDatabase() {
                         context.applicationContext,
                         NutaDB::class.java,
                         "uang_masuk_db"
-                    ).build()
+                    ).fallbackToDestructiveMigration()
+                        .build()
                 }
             }
             return INSTANCE as NutaDB

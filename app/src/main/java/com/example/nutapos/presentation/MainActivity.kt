@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), View {
 
         val db = NutaDB.getDatabase(this)
         presenter = NutaPresenter(db.uangMasukDao())
-        presenter.insertData(UangMasuk(null, "elissa", "transfer", 12))
+        presenter.insertData(UangMasuk(null, "elissa", "transfer", 12,1,"02/02/2020"))
         onAttachView()
     }
 
